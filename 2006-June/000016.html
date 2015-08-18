@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rox4debian-users] System dl error, rox svn, 0install
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rox4debian-users/2006-June/index.html" >
+   <LINK REL="made" HREF="mailto:rox4debian-users%40lists.berlios.de?Subject=Re%3A%20%5BRox4debian-users%5D%20System%20dl%20error%2C%20rox%20svn%2C%200install&In-Reply-To=%3Ccd53a0140606011155r38576690sea9cb894c088d43f%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000015.html">
+   <LINK REL="Next"  HREF="000017.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rox4debian-users] System dl error, rox svn, 0install</H1>
+    <B>Thomas Leonard</B> 
+    <A HREF="mailto:rox4debian-users%40lists.berlios.de?Subject=Re%3A%20%5BRox4debian-users%5D%20System%20dl%20error%2C%20rox%20svn%2C%200install&In-Reply-To=%3Ccd53a0140606011155r38576690sea9cb894c088d43f%40mail.gmail.com%3E"
+       TITLE="[Rox4debian-users] System dl error, rox svn, 0install">talex5 at gmail.com
+       </A><BR>
+    <I>Thu Jun  1 20:55:29 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000015.html">[Rox4debian-users] System dl error, rox svn, 0install
+</A></li>
+        <LI>Next message: <A HREF="000017.html">[Rox4debian-users] # of &quot;Desktops&quot;
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#16">[ date ]</a>
+              <a href="thread.html#16">[ thread ]</a>
+              <a href="subject.html#16">[ subject ]</a>
+              <a href="author.html#16">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 6/1/06, Dan MacDonald &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rox4debian-users">danboid at yahoo.co.uk</A>&gt; wrote:
+&gt;<i> I just installed 1.7 on my main machine and I think I
+</I>&gt;<i> was imagining things being downloaded twice except
+</I>&gt;<i> rox-lib2, but I wasn't taking note of the versions so
+</I>&gt;<i> maybe they're different?
+</I>&gt;<i>
+</I>&gt;<i> I can't download 'System' at the moment- it says
+</I>&gt;<i>
+</I>&gt;<i> Error downloading 'system-1.9.1.tar.bz2':
+</I>
+Should work now. The &quot;osdn&quot; site has been down for ages, but I've
+switched it to 'kent'.
+
+&gt;<i> &gt; &gt; If you don't want to wait, you can get ROX-Filer
+</I>&gt;<i> &gt; from svn. Just type:
+</I>&gt;<i> &gt; &gt;
+</I>&gt;<i> &gt; &gt; svn co
+</I>&gt;<i> &gt; <A HREF="https://svn.sourceforge.net/svnroot/rox/trunk/rox">https://svn.sourceforge.net/svnroot/rox/trunk/rox</A>
+</I>&gt;<i> &gt; rox
+</I>&gt;<i> &gt; &gt;
+</I>&gt;<i> &gt; &gt; and [...]
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; $ 0launch --feed rox/ROX-Filer.xml
+</I>&gt;<i>
+</I>&gt;<i> Sounds great, but thats not the actual command I need
+</I>&gt;<i> is it? Well it doesn't work for me. How should the
+</I>&gt;<i> rox/ROX-Filer.xml bit really read?
+</I>
+Sorry, you still need the 'svn co' bit to actually get it. But use the
+--feed command to register it rather than editing scripts.
+
+&gt;<i> I've not tried running rox as a different user yet but
+</I>&gt;<i> seeing as all the progs are downloaded into my home
+</I>&gt;<i> dir I'm presuming that each user on the system who
+</I>&gt;<i> wants to use ROX will have to download their own
+</I>&gt;<i> version of ROX filer etc? I hope I'm wrong on this!
+</I>
+Copy ~/.cache/0install.net/implementations/* to
+/var/cache/0install.net/implementations to share them. If you don't
+quite trust the user you're copying from, use '0store verify' to check
+that the copy's contents matches the name of the directory. The plan
+is to make this copy-and-check automatic one day, so all downloads are
+shared without anyone needing root access.
+
+&gt;<i> &gt; I can make the actual release package. Mainly it
+</I>&gt;<i> &gt; just needs someone
+</I>&gt;<i> &gt; with a little time to announce the dates and
+</I>&gt;<i> &gt; generally keep it on
+</I>&gt;<i> &gt; track.
+</I>&gt;<i>
+</I>&gt;<i> 'Announce the dates'? You've lost me again Thomas.
+</I>
+You have to pick a release date, announce it, encourge people to test
+the svn version, and keep track of who you're waiting for (a
+translator who needs an extra day, or someone with an important patch,
+etc). See:
+
+  <A HREF="http://rox.sourceforge.net/desktop/node/193">http://rox.sourceforge.net/desktop/node/193</A>
+
+Leaving me to organise releases is a bad idea because I get distracted
+and forget to do anything ;-)
+
+
+-- 
+Dr Thomas Leonard		<A HREF="http://rox.sourceforge.net">http://rox.sourceforge.net</A>
+GPG: 9242 9807 C985 3C07 44A6  8B9A AE07 8280 59A5 3CC1
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000015.html">[Rox4debian-users] System dl error, rox svn, 0install
+</A></li>
+	<LI>Next message: <A HREF="000017.html">[Rox4debian-users] # of &quot;Desktops&quot;
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#16">[ date ]</a>
+              <a href="thread.html#16">[ thread ]</a>
+              <a href="subject.html#16">[ subject ]</a>
+              <a href="author.html#16">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rox4debian-users">More information about the Rox4debian-users
+mailing list</a><br>
+</body></html>

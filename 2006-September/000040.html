@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rox4debian-users] FW:  rox4debian on etch
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rox4debian-users/2006-September/index.html" >
+   <LINK REL="made" HREF="mailto:rox4debian-users%40lists.berlios.de?Subject=Re%3A%20%5BRox4debian-users%5D%20FW%3A%20%20rox4debian%20on%20etch&In-Reply-To=%3Ce57a1470609130724w7eb11aa1ub5abee1bb48e84bb%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000039.html">
+   <LINK REL="Next"  HREF="000041.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rox4debian-users] FW:  rox4debian on etch</H1>
+    <B>Alexander McLeay</B> 
+    <A HREF="mailto:rox4debian-users%40lists.berlios.de?Subject=Re%3A%20%5BRox4debian-users%5D%20FW%3A%20%20rox4debian%20on%20etch&In-Reply-To=%3Ce57a1470609130724w7eb11aa1ub5abee1bb48e84bb%40mail.gmail.com%3E"
+       TITLE="[Rox4debian-users] FW:  rox4debian on etch">alexander at thecartographers.net
+       </A><BR>
+    <I>Wed Sep 13 16:24:44 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000039.html">[Rox4debian-users] rox4debian on etch
+</A></li>
+        <LI>Next message: <A HREF="000041.html">[Rox4debian-users] DeviceHandler: Eject Audio CDs
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#40">[ date ]</a>
+              <a href="thread.html#40">[ thread ]</a>
+              <a href="subject.html#40">[ subject ]</a>
+              <a href="author.html#40">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 13/09/06, Carl Bolduc wrote:
+&gt;<i>
+</I>&gt;<i> Hi,
+</I>&gt;<i>
+</I>&gt;<i> Is rox4debian suppose to work on etch, or is it just for sid?
+</I>&gt;<i>
+</I>&gt;<i> I have a fresh etch installation, I added rox4debian repo and when I try to install rox-desktop, I get this:
+</I>&gt;<i>
+</I>&gt;<i> rox-desktop won't install cause zeroinstall-injector: Depends: python (&lt; 2.4) but 2.4.3-11 is installed
+</I>&gt;<i>
+</I>&gt;<i> What should I do? I tried apt-get dist-upgrade without succes...
+</I>
+Etch and Sid switched from Python 2.3 to Python 2.4 a short while ago;
+due to the way it's set up, the zero install injector package for
+Debian/stable wants Python 2.3. The answer is to install
+zeroinstall-injector_0.22-2_all. As far as I can tell, that's actually
+in the rox4debian source (maybe try apt-get updating again, it might
+only have been added recently). Or else, you can get it from
+&lt;<A HREF="http://prdownloads.sourceforge.net/zero-install/zeroinstall-injector_0.22-2_all.deb?download">http://prdownloads.sourceforge.net/zero-install/zeroinstall-injector_0.22-2_all.deb?download</A>&gt;.
+
+--
+Alexander.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000039.html">[Rox4debian-users] rox4debian on etch
+</A></li>
+	<LI>Next message: <A HREF="000041.html">[Rox4debian-users] DeviceHandler: Eject Audio CDs
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#40">[ date ]</a>
+              <a href="thread.html#40">[ thread ]</a>
+              <a href="subject.html#40">[ subject ]</a>
+              <a href="author.html#40">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rox4debian-users">More information about the Rox4debian-users
+mailing list</a><br>
+</body></html>

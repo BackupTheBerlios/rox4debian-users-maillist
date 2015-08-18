@@ -1,0 +1,117 @@
+From drcurl at gmail.com  Thu Nov 16 03:16:57 2006
+From: drcurl at gmail.com (Carl Bolduc)
+Date: Wed, 15 Nov 2006 21:16:57 -0500
+Subject: [Rox4debian-users] Will it work with Ubuntu?
+Message-ID: <7224a92b0611151816n458ee176v9b85dcc3acdd4dc2@mail.gmail.com>
+
+Hi, I'm trying to build a desktop based on rox and beryl window manager. I
+would like to know if the rox4debian repo shoulf work with ubuntu.
+
+If not, how should I proceed? Should I use 0install? How can I an a
+rox-desktop entry in gdm that proceed to install the various parts of
+rox-desktop upon first login (like in debian)
+
+Thanks, rox is awesome!
+
+carl
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/rox4debian-users/attachments/20061115/eb4c1e69/attachment.html>
+
+From talex5 at gmail.com  Fri Nov 17 21:43:44 2006
+From: talex5 at gmail.com (Thomas Leonard)
+Date: Fri, 17 Nov 2006 20:43:44 +0000
+Subject: [Rox4debian-users] Will it work with Ubuntu?
+In-Reply-To: <7224a92b0611151816n458ee176v9b85dcc3acdd4dc2@mail.gmail.com>
+References: <7224a92b0611151816n458ee176v9b85dcc3acdd4dc2@mail.gmail.com>
+Message-ID: <cd53a0140611171243x34c2217bjdc3f81a8cf380542@mail.gmail.com>
+
+On 11/16/06, Carl Bolduc <drcurl at gmail.com> wrote:
+> Hi, I'm trying to build a desktop based on rox and beryl window manager. I
+> would like to know if the rox4debian repo shoulf work with ubuntu.
+>
+> If not, how should I proceed? Should I use 0install? How can I an a
+> rox-desktop entry in gdm that proceed to install the various parts of
+> rox-desktop upon first login (like in debian)
+
+Probably best to try and see what happens. It seems to install with
+edgy, although I've only tried it in a chroot within a Debian system.
+I didn't manage to get rox-menu-method due to a file conflict:
+
+dpkg: error processing
+/var/cache/apt/archives/rox-xdg-defaults_1_all.deb (--unpack):
+ trying to overwrite `/usr/share/applications/defaults.list', which is
+also in package desktop-file-utils
+Errors were encountered while processing:
+ /var/cache/apt/archives/rox-xdg-defaults_1_all.deb
+
+Also, I couldn't start hal (hangs), but that's probably due to the
+chroot. Apart from that, I was able to run 'rox', browse to
+/usr/share/rox-desktop/ and run the applications.
+
+You may need to use the 'sudo passwd' trick to set a root password
+while setting up ROX-Session if you want "ROX" to appear on the main
+login screen. Hopefuly someone can contribute a patch for ROX-Session
+so this isn't needed.
+
+Let us know if it works...
+
+
+-- 
+Dr Thomas Leonard		http://rox.sourceforge.net
+GPG: 9242 9807 C985 3C07 44A6  8B9A AE07 8280 59A5 3CC1
+
+
+From 2tomas at informatik.uni-hamburg.de  Sat Nov 18 10:14:41 2006
+From: 2tomas at informatik.uni-hamburg.de (Dennis Tomas)
+Date: Sat, 18 Nov 2006 10:14:41 +0100
+Subject: [Rox4debian-users] Will it work with Ubuntu?
+In-Reply-To: <cd53a0140611171243x34c2217bjdc3f81a8cf380542@mail.gmail.com>
+References: <7224a92b0611151816n458ee176v9b85dcc3acdd4dc2@mail.gmail.com>
+	<cd53a0140611171243x34c2217bjdc3f81a8cf380542@mail.gmail.com>
+Message-ID: <455ECF01.6070900@informatik.uni-hamburg.de>
+
+Thomas Leonard wrote:
+> On 11/16/06, Carl Bolduc <drcurl at gmail.com> wrote:
+>> Hi, I'm trying to build a desktop based on rox and beryl window manager. I
+>> would like to know if the rox4debian repo shoulf work with ubuntu.
+>>
+>> If not, how should I proceed? Should I use 0install? How can I an a
+>> rox-desktop entry in gdm that proceed to install the various parts of
+>> rox-desktop upon first login (like in debian)
+> 
+> Probably best to try and see what happens. It seems to install with
+> edgy, although I've only tried it in a chroot within a Debian system.
+> I didn't manage to get rox-menu-method due to a file conflict:
+> 
+> dpkg: error processing
+> /var/cache/apt/archives/rox-xdg-defaults_1_all.deb (--unpack):
+>  trying to overwrite `/usr/share/applications/defaults.list', which is
+> also in package desktop-file-utils
+> Errors were encountered while processing:
+>  /var/cache/apt/archives/rox-xdg-defaults_1_all.deb
+> 
+I've fixed this for the next release by prepending
+"/usr/share/rox-desktop/share" to XDG_DATA_DIRS on login and placing the
+defaults in the "applications" subdirectory. rox-xdg-defaults is now
+obsolete.
+I'll try to make a new release soon.
+
+> Also, I couldn't start hal (hangs), but that's probably due to the
+> chroot. Apart from that, I was able to run 'rox', browse to
+> /usr/share/rox-desktop/ and run the applications.
+> 
+> You may need to use the 'sudo passwd' trick to set a root password
+> while setting up ROX-Session if you want "ROX" to appear on the main
+> login screen. Hopefuly someone can contribute a patch for ROX-Session
+> so this isn't needed.
+> 
+A login-script is included in rox4debian, so there's no need to set it
+up via ROX-Session. It's better to use the included script, because it
+does some rox4debian-specific things (like setting some env variables).
+You might still need a root password though, because the rox-reboot and
+rox-halt wrappers as well as the sysconfig-wrappers ask for it.
+Does anybody know how to figure out whether to use su or sudo?
+
+
+

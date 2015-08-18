@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rox4debian-users] update-menus : /tmp/roxmenu: line 204: New -rv: command not found
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rox4debian-users/2006-June/index.html" >
+   <LINK REL="made" HREF="mailto:rox4debian-users%40lists.berlios.de?Subject=Re%3A%20%5BRox4debian-users%5D%20update-menus%20%3A%20/tmp/roxmenu%3A%20line%20204%3A%20New%0A%20-rv%3A%20command%20not%20found&In-Reply-To=%3C448484F6.0%40informatik.uni-hamburg.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000025.html">
+   <LINK REL="Next"  HREF="000027.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rox4debian-users] update-menus : /tmp/roxmenu: line 204: New -rv: command not found</H1>
+    <B>Dennis Tomas</B> 
+    <A HREF="mailto:rox4debian-users%40lists.berlios.de?Subject=Re%3A%20%5BRox4debian-users%5D%20update-menus%20%3A%20/tmp/roxmenu%3A%20line%20204%3A%20New%0A%20-rv%3A%20command%20not%20found&In-Reply-To=%3C448484F6.0%40informatik.uni-hamburg.de%3E"
+       TITLE="[Rox4debian-users] update-menus : /tmp/roxmenu: line 204: New -rv: command not found">2tomas at informatik.uni-hamburg.de
+       </A><BR>
+    <I>Mon Jun  5 21:24:38 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000025.html">[Rox4debian-users] update-menus : /tmp/roxmenu: line 204: New -rv: command not found
+</A></li>
+        <LI>Next message: <A HREF="000027.html">[Rox4debian-users] update-menus : /tmp/roxmenu: line 204: New -rv: command not found
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#26">[ date ]</a>
+              <a href="thread.html#26">[ thread ]</a>
+              <a href="subject.html#26">[ subject ]</a>
+              <a href="author.html#26">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Jan Wagemakers wrote:
+&gt;<i> Dennis Tomas &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rox4debian-users">2tomas at informatik.uni-hamburg.de</A>&gt; schreef:
+</I>&gt;<i>
+</I>&gt;<i> [rox-menu-method_1-4_all.deb : update-menus : /tmp/roxmenu: line 204]
+</I>&gt;<i>   
+</I>&gt;&gt;<i> Sorry, I renamed &quot;rox-filer&quot; to &quot;rox-desktop&quot;. But &quot;rox-filer&quot; didn't 
+</I>&gt;&gt;<i> get removed when upgrading. So I've just renamed it back. You should 
+</I>&gt;&gt;<i> remove /etc/menu-methods/rox-desktop after installing the new version 
+</I>&gt;&gt;<i> 1-6. I hope it works now.
+</I>&gt;&gt;<i>     
+</I>&gt;<i>
+</I>&gt;<i> I don't see any error-messages this time. Thanks!
+</I>&gt;<i>
+</I>&gt;<i> Another thing that I noticed is that after upgrading
+</I>&gt;<i> rox-desktop/rox-menu-method, I can't find any icons anymore for ROX-Session
+</I>&gt;<i> or Edit in &quot;/usr/share/rox-desktop/Apps&quot;.
+</I>&gt;<i>
+</I>&gt;<i> Any reasson why this has changed?
+</I>&gt;<i>   
+</I>I've split the rox-desktop package up into three:
+
+rox-desktop-core
+provides only the login script and wrappers for ROX-Filer, OroboROX, 
+ROX-Session, Find, Edit, Archive, the applets for the default panel and 
+some config-apps. It is for people who don't want ivman and rox-menu-method.
+
+rox-desktop
+provides wrappers for Media, Tail, System, some more applets and 
+config-apps, gmrun, gnome-system-tools, bum and synaptic. It depends on 
+rox-desktop-core, ivman, rox-menu-method and some other. The 
+non-ROX-apps that are wrapped are only &quot;recommended&quot; and installed on 
+demand when clicking the app's icon.
+
+rox-desktop-full
+is an empty package that depends on rox-desktop and some useful apps 
+(i.e. firefox, thunderbird, gxine, graveman...) to allow one to install 
+a fully-featured desktop environment with only one command.
+
+However, I somehow forgot to add rox-desktop-core to the dependencies of 
+rox-desktop. Version 2-3 should fix this.
+
+
+	
+
+	
+		
+___________________________________________________________ 
+Gesendet von Yahoo! Mail - Jetzt mit 1GB Speicher kostenlos - Hier anmelden: <A HREF="http://mail.yahoo.de">http://mail.yahoo.de</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000025.html">[Rox4debian-users] update-menus : /tmp/roxmenu: line 204: New -rv: command not found
+</A></li>
+	<LI>Next message: <A HREF="000027.html">[Rox4debian-users] update-menus : /tmp/roxmenu: line 204: New -rv: command not found
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#26">[ date ]</a>
+              <a href="thread.html#26">[ thread ]</a>
+              <a href="subject.html#26">[ subject ]</a>
+              <a href="author.html#26">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rox4debian-users">More information about the Rox4debian-users
+mailing list</a><br>
+</body></html>

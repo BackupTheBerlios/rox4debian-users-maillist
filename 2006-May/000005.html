@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rox4debian-users] Re: [rox-devel] rox4debian 5 automount problems
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rox4debian-users/2006-May/index.html" >
+   <LINK REL="made" HREF="mailto:rox4debian-users%40lists.berlios.de?Subject=Re%3A%20%5BRox4debian-users%5D%20Re%3A%20%5Brox-devel%5D%20rox4debian%205%20automount%20problems&In-Reply-To=%3C447B02EA.1020108%40informatik.uni-hamburg.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000004.html">
+   <LINK REL="Next"  HREF="000006.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rox4debian-users] Re: [rox-devel] rox4debian 5 automount problems</H1>
+    <B>Dennis Tomas</B> 
+    <A HREF="mailto:rox4debian-users%40lists.berlios.de?Subject=Re%3A%20%5BRox4debian-users%5D%20Re%3A%20%5Brox-devel%5D%20rox4debian%205%20automount%20problems&In-Reply-To=%3C447B02EA.1020108%40informatik.uni-hamburg.de%3E"
+       TITLE="[Rox4debian-users] Re: [rox-devel] rox4debian 5 automount problems">2tomas at informatik.uni-hamburg.de
+       </A><BR>
+    <I>Mon May 29 16:19:22 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000004.html">[Rox4debian-users] Re: [rox-devel] [ANNOUNCE] rox4debian 5 released
+</A></li>
+        <LI>Next message: <A HREF="000006.html">[Rox4debian-users] ivman probs
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5">[ date ]</a>
+              <a href="thread.html#5">[ thread ]</a>
+              <a href="subject.html#5">[ subject ]</a>
+              <a href="author.html#5">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Dan MacDonald wrote:
+&gt;<i> Sorry to post another rox4debian bug report on this
+</I>&gt;<i> list as it seems there is a separate list for
+</I>&gt;<i> rox4debian now but I don't think I'm subscribed and I
+</I>&gt;<i> don't know how to subscribe either. Soon as I know
+</I>&gt;<i> that I'm registered I'll post future bugs to the
+</I>&gt;<i> appropriate list.
+</I>&gt;<i>   
+</I>You can subscribe here: 
+<A HREF="http://lists.berlios.de/mailman/listinfo/rox4debian-users">http://lists.berlios.de/mailman/listinfo/rox4debian-users</A>
+&gt;<i> Small 'bug'
+</I>&gt;<i>
+</I>&gt;<i> I'm happy to see that when I insert an audio CD a CD
+</I>&gt;<i> icon is displayed in the panel. However, it still
+</I>&gt;<i> shows a grey box with green blob for data CDs.
+</I>&gt;<i>   
+</I>It's because the code for setting an icon via SOAP rpc isn't in the 
+filer yet.
+Thomas, are you planning to include it? It's of good use for my project.
+
+&gt;<i> Big bug
+</I>&gt;<i>
+</I>&gt;<i> Removing an ejected usb disc causes automounting to
+</I>&gt;<i> stop working. 
+</I>&gt;<i>
+</I>&gt;<i> On the same machine with the same kernel, HAL version
+</I>&gt;<i> etc. but running KDE instead I can insert and remove
+</I>&gt;<i> USB disks as much as I like without problem. Under
+</I>&gt;<i> rox4debian 5 you insert a USB disc, open it, eject the
+</I>&gt;<i> disc by right-clicking on its icon and choosing
+</I>&gt;<i> 'eject' then physically disconnect the disc and it
+</I>&gt;<i> brings up a rox-session error window saying:
+</I>&gt;<i>
+</I>&gt;<i> &quot;Your login script ('%s') failed. I'll give you an
+</I>&gt;<i> xterm to try and fix it. ROX-session itself is still
+</I>&gt;<i> running though - run a second time to logout&quot;
+</I>&gt;<i>
+</I>&gt;<i> After OKing that message automounting stops working
+</I>&gt;<i> for both USB and optical drives unless you log out of
+</I>&gt;<i> ROX and log back in.
+</I>&gt;<i>   
+</I>This means that ivman has crashed.
+I've just uploaded version 1-6 (the previous was really &quot;1-5&quot;, I called 
+it &quot;5&quot; by mistake), so you can try upgrading and see if it still 
+happens. After installing 1-6, you needn't remove any directory, just 
+copy 
+/usr/share/rox-desktop/defaults/rox.sourceforge.net/ROX-Session/Login 
+into ~/.config/rox.sourceforge.net/ROX-Session, overwriting the old 
+Login-script. Then add the &quot;--debug&quot; option to the last command in the 
+file (the one that starts ivman).
+When automounting stops to work, right-click on the Logout-button and 
+choose &quot;Message Log...&quot;. What does it say?
+What are the last few lines of &quot;~/.rox4debian/rox-desktop/disks.log&quot;?
+
+
+	
+
+	
+		
+___________________________________________________________ 
+Telefonate ohne weitere Kosten vom PC zum PC: <A HREF="http://messenger.yahoo.de">http://messenger.yahoo.de</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000004.html">[Rox4debian-users] Re: [rox-devel] [ANNOUNCE] rox4debian 5 released
+</A></li>
+	<LI>Next message: <A HREF="000006.html">[Rox4debian-users] ivman probs
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5">[ date ]</a>
+              <a href="thread.html#5">[ thread ]</a>
+              <a href="subject.html#5">[ subject ]</a>
+              <a href="author.html#5">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rox4debian-users">More information about the Rox4debian-users
+mailing list</a><br>
+</body></html>

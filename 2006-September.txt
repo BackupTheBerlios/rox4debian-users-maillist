@@ -1,0 +1,150 @@
+From drcurl at gmail.com  Wed Sep 13 04:02:40 2006
+From: drcurl at gmail.com (Carl Bolduc)
+Date: Tue, 12 Sep 2006 22:02:40 -0400
+Subject: [Rox4debian-users] rox4debian on etch
+Message-ID: <7224a92b0609121902g5fb527c2pfedee9440342ab1f@mail.gmail.com>
+
+Hi,
+
+Is rox4debian suppose to work on etch, or is it just for sid?
+
+I have a fresh etch installation, I added rox4debian repo and when I try to
+install rox-desktop, I get this:
+
+rox-desktop won't install cause zeroinstall-injector: Depends: python (< 2.4)
+but 2.4.3-11 is installed
+
+What should I do? I tried apt-get dist-upgrade without succes...
+
+carl
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/rox4debian-users/attachments/20060912/c9ae2ff9/attachment.html>
+
+From 2tomas at informatik.uni-hamburg.de  Wed Sep 13 08:18:13 2006
+From: 2tomas at informatik.uni-hamburg.de (Dennis Tomas)
+Date: Wed, 13 Sep 2006 08:18:13 +0200
+Subject: [Rox4debian-users] rox4debian on etch
+In-Reply-To: <7224a92b0609121902g5fb527c2pfedee9440342ab1f@mail.gmail.com>
+References: <7224a92b0609121902g5fb527c2pfedee9440342ab1f@mail.gmail.com>
+Message-ID: <4507A2A5.3000304@informatik.uni-hamburg.de>
+
+Carl Bolduc wrote:
+> Hi,
+> 
+> Is rox4debian suppose to work on etch, or is it just for sid?
+> 
+It should work on both.
+
+> I have a fresh etch installation, I added rox4debian repo and when I try 
+> to install rox-desktop, I get this:
+> 
+> rox-desktop won't install cause zeroinstall-injector: Depends: python (< 
+> 2.4) but 2.4.3-11 is installed
+> 
+> What should I do? I tried apt-get dist-upgrade without succes...
+> 
+Etch recently switched to python2.4, while the injector package still 
+depends on python2.3. I've now uploaded the new injector-package as well 
+as some other updated packages.
+However, this also means that it won't work on sarge anymore. I think 
+I'll need to set up a separate repository for stable.
+Until then, everybody using debian stable must install the injector 
+package from the 0install site.
+
+
+
+
+
+From alexander at thecartographers.net  Wed Sep 13 16:24:44 2006
+From: alexander at thecartographers.net (Alexander McLeay)
+Date: Thu, 14 Sep 2006 00:24:44 +1000
+Subject: [Rox4debian-users] FW:  rox4debian on etch
+In-Reply-To: <8B1292E9B616D34EA5707CEBF9D00F2D02A99E9E@stexchange1.students.ltu.edu.au>
+References: <8B1292E9B616D34EA5707CEBF9D00F2D02A99E9E@stexchange1.students.ltu.edu.au>
+Message-ID: <e57a1470609130724w7eb11aa1ub5abee1bb48e84bb@mail.gmail.com>
+
+On 13/09/06, Carl Bolduc wrote:
+>
+> Hi,
+>
+> Is rox4debian suppose to work on etch, or is it just for sid?
+>
+> I have a fresh etch installation, I added rox4debian repo and when I try to install rox-desktop, I get this:
+>
+> rox-desktop won't install cause zeroinstall-injector: Depends: python (< 2.4) but 2.4.3-11 is installed
+>
+> What should I do? I tried apt-get dist-upgrade without succes...
+
+Etch and Sid switched from Python 2.3 to Python 2.4 a short while ago;
+due to the way it's set up, the zero install injector package for
+Debian/stable wants Python 2.3. The answer is to install
+zeroinstall-injector_0.22-2_all. As far as I can tell, that's actually
+in the rox4debian source (maybe try apt-get updating again, it might
+only have been added recently). Or else, you can get it from
+<http://prdownloads.sourceforge.net/zero-install/zeroinstall-injector_0.22-2_all.deb?download>.
+
+--
+Alexander.
+
+
+From alexander at thecartographers.net  Fri Sep 22 09:48:04 2006
+From: alexander at thecartographers.net (Alexander McLeay)
+Date: Fri, 22 Sep 2006 17:48:04 +1000
+Subject: [Rox4debian-users] DeviceHandler: Eject Audio CDs
+Message-ID: <e57a1470609220048r45eaa3efsc6c9bf2bf39c1568@mail.gmail.com>
+
+Thanks for DeviceHandler, it's a fantastic program, but...
+
+My computer has no eject button on its cdrom drive, and so I need to
+use software to eject any CD. It would be much easier if the AudioCD
+handler had an 'eject' menu option. This probably applies to DVDs if
+they don't already have one too; the only DVD I have at hand is
+recognised as an data DVD. I would send in a patch, but the change is
+so trivial it hardly seems worth it :)
+
+(Also, by default, pmount mounts CDs/DVDs as noexec, which makes it
+very difficult if you want to install software from one. AFAICT, the
+way to change this is by giving the argument -e to pmount, which means
+modifying DeviceHandler as well. Unless there's some configuration
+file for pmount I'm unaware of, it would be convenient if an option
+could be added to allow mounting them without noexec enabled.)
+
+Thanks!
+--
+Alexander
+
+
+From 2tomas at informatik.uni-hamburg.de  Thu Sep 28 12:28:15 2006
+From: 2tomas at informatik.uni-hamburg.de (Dennis Tomas)
+Date: Thu, 28 Sep 2006 12:28:15 +0200
+Subject: [Rox4debian-users] DeviceHandler: Eject Audio CDs
+In-Reply-To: <e57a1470609220048r45eaa3efsc6c9bf2bf39c1568@mail.gmail.com>
+References: <e57a1470609220048r45eaa3efsc6c9bf2bf39c1568@mail.gmail.com>
+Message-ID: <451BA3BF.5000800@informatik.uni-hamburg.de>
+
+Alexander McLeay wrote:
+> Thanks for DeviceHandler, it's a fantastic program, but...
+> 
+> My computer has no eject button on its cdrom drive, and so I need to
+> use software to eject any CD. It would be much easier if the AudioCD
+> handler had an 'eject' menu option. This probably applies to DVDs if
+> they don't already have one too; the only DVD I have at hand is
+> recognised as an data DVD. I would send in a patch, but the change is
+> so trivial it hardly seems worth it :)
+> 
+I've added it. Thanks for reporting!
+
+> (Also, by default, pmount mounts CDs/DVDs as noexec, which makes it
+> very difficult if you want to install software from one. AFAICT, the
+> way to change this is by giving the argument -e to pmount, which means
+> modifying DeviceHandler as well. Unless there's some configuration
+> file for pmount I'm unaware of, it would be convenient if an option
+> could be added to allow mounting them without noexec enabled.)
+> 
+I've added a checkbox for the exec (and sync) flag to the Volume
+handler's options.
+
+I'll release version 0.2.9 this weekend.
+
+

@@ -1,0 +1,169 @@
+From danboid at yahoo.co.uk  Sat Aug 19 14:16:27 2006
+From: danboid at yahoo.co.uk (Dan MacDonald)
+Date: Sat, 19 Aug 2006 05:16:27 -0700 (PDT)
+Subject: [Rox4debian-users] Can't update rox-desktop
+In-Reply-To: <447DE230.6030206@informatik.uni-hamburg.de>
+Message-ID: <20060819121627.57351.qmail@web26009.mail.ukl.yahoo.com>
+
+Hi!
+
+I've got an older version of rox-desktop already
+installed on this Debian sid box but I can't upgrade
+to the latest version
+
+------------------
+
+root at KanotixROXBox:/home/n# apt-get install
+rox-desktop
+Reading package lists... Done
+Building dependency tree... Done
+Some packages could not be installed. This may mean
+that you have
+requested an impossible situation or if you are using
+the unstable
+distribution that some required packages have not yet
+been created
+or been moved out of Incoming.
+
+Since you only requested a single operation it is
+extremely likely that
+the package is simply not installable and a bug report
+against
+that package should be filed.
+The following information may help to resolve the
+situation:
+
+The following packages have unmet dependencies:
+  rox-desktop: Depends: rox-app-system but it is not
+going to be installed
+E: Broken packages
+
+---------------------
+
+root at KanotixROXBox:/home/n# apt-get install
+rox-app-system
+Reading package lists... Done
+Building dependency tree... Done
+Some packages could not be installed. This may mean
+that you have
+requested an impossible situation or if you are using
+the unstable
+distribution that some required packages have not yet
+been created
+or been moved out of Incoming.
+
+Since you only requested a single operation it is
+extremely likely that
+the package is simply not installable and a bug report
+against
+that package should be filed.
+The following information may help to resolve the
+situation:
+
+The following packages have unmet dependencies:
+  rox-app-system: Depends: libgtop2-5 but it is not
+installable or
+                           libgtop2-2 but it is not
+installable
+E: Broken packages
+
+-----------------------
+
+Any ideas?
+
+Thanks
+
+dan
+
+__________________________________________________
+Do You Yahoo!?
+Tired of spam?  Yahoo! Mail has the best spam protection around 
+http://mail.yahoo.com 
+
+
+From jan.wagemakers at gmail.com  Tue Aug 29 12:20:00 2006
+From: jan.wagemakers at gmail.com (Jan Wagemakers)
+Date: Tue, 29 Aug 2006 12:20:00 +0200
+Subject: [Rox4debian-users] apt-get install rox-desktop : error "No such
+	file..."
+Message-ID: <20060829102000.GA9935@qwerty.be>
+
+Hello,
+
+When I do a "apt-get install rox-desktop" I get this error message:
+
+ | Get:1 ftp://ftp.berlios.de binary/ rox-desktop 2.8 [2064B]
+ | Err ftp://ftp.berlios.de binary/ rox-desktop 2.8
+ |   Unable to fetch file, server said '/pub/rox4debian/binary/./rox-desktop_2.8_all.deb: No such file or directory  '
+ | Get:2 ftp://ftp.berlios.de binary/ rox-applet-devicehandler 2 [4856B]
+ | Err ftp://ftp.berlios.de binary/ rox-applet-devicehandler 2
+ |   Unable to fetch file, server said '/pub/rox4debian/binary/./rox-applet-devicehandler_2_all.deb: No such file or directory  '
+ | Failed to fetch ftp://ftp.berlios.de/pub/rox4debian/binary/./rox-desktop_2.8_all.deb  Unable to fetch file, server said '/pub/rox4debian/binary/./rox-desktop_2.8_all.deb: No such file or directory  '
+ | Failed to fetch ftp://ftp.berlios.de/pub/rox4debian/binary/./rox-applet-devicehandler_2_all.deb  Unable to fetch file, server said '/pub/rox4debian/binary/./rox-applet-devicehandler_2_all.deb: No such file or directory  '
+ | E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?
+
+I'm running Debian unstable. Any idea what's wrong?
+
+
+-- 
+Met vriendelijke groetjes         - Jan Wagemakers -
+
+... A: Because it messes up the order in which people normally read text.
+    Q: Why is top-posting such a bad thing?
+
+
+From 2tomas at informatik.uni-hamburg.de  Tue Aug 29 13:07:11 2006
+From: 2tomas at informatik.uni-hamburg.de (Dennis Tomas)
+Date: Tue, 29 Aug 2006 13:07:11 +0200
+Subject: [Rox4debian-users] apt-get install rox-desktop : error "No such
+ file..."
+In-Reply-To: <20060829102000.GA9935@qwerty.be>
+References: <20060829102000.GA9935@qwerty.be>
+Message-ID: <44F41FDF.5020104@informatik.uni-hamburg.de>
+
+Jan Wagemakers wrote:
+> Hello,
+> 
+> When I do a "apt-get install rox-desktop" I get this error message:
+> 
+>  | Get:1 ftp://ftp.berlios.de binary/ rox-desktop 2.8 [2064B]
+>  | Err ftp://ftp.berlios.de binary/ rox-desktop 2.8
+>  |   Unable to fetch file, server said '/pub/rox4debian/binary/./rox-desktop_2.8_all.deb: No such file or directory  '
+>  | Get:2 ftp://ftp.berlios.de binary/ rox-applet-devicehandler 2 [4856B]
+>  | Err ftp://ftp.berlios.de binary/ rox-applet-devicehandler 2
+>  |   Unable to fetch file, server said '/pub/rox4debian/binary/./rox-applet-devicehandler_2_all.deb: No such file or directory  '
+>  | Failed to fetch ftp://ftp.berlios.de/pub/rox4debian/binary/./rox-desktop_2.8_all.deb  Unable to fetch file, server said '/pub/rox4debian/binary/./rox-desktop_2.8_all.deb: No such file or directory  '
+>  | Failed to fetch ftp://ftp.berlios.de/pub/rox4debian/binary/./rox-applet-devicehandler_2_all.deb  Unable to fetch file, server said '/pub/rox4debian/binary/./rox-applet-devicehandler_2_all.deb: No such file or directory  '
+>  | E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?
+> 
+> I'm running Debian unstable. Any idea what's wrong?
+
+I forgot to upload some new packages. It's fixed now.
+
+
+From jan.wagemakers at gmail.com  Tue Aug 29 19:15:37 2006
+From: jan.wagemakers at gmail.com (Jan Wagemakers)
+Date: Tue, 29 Aug 2006 19:15:37 +0200
+Subject: [Rox4debian-users] apt-get install rox-desktop : error "No such
+	file..."
+In-Reply-To: <44F41FDF.5020104@informatik.uni-hamburg.de>
+References: <20060829102000.GA9935@qwerty.be>
+	<44F41FDF.5020104@informatik.uni-hamburg.de>
+Message-ID: <20060829171537.GA1618@qwerty.be>
+
+Dennis Tomas schreef:
+
+>> When I do a "apt-get install rox-desktop" I get this error message:
+[cut]
+>> I'm running Debian unstable. Any idea what's wrong?
+> I forgot to upload some new packages. It's fixed now.
+
+Thanks!
+
+
+-- 
+Met vriendelijke groetjes         - Jan Wagemakers -
+
+ - Debian GNU/Linux testing/unstable - Up : 47 days 
+
+

@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rox4debian-users] r4d 1.7 1st impressions
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rox4debian-users/2006-May/index.html" >
+   <LINK REL="made" HREF="mailto:rox4debian-users%40lists.berlios.de?Subject=Re%3A%20%5BRox4debian-users%5D%20r4d%201.7%201st%20impressions&In-Reply-To=%3Ccd53a0140605311347w569d8be2o7f296c5645b45b74%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000012.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rox4debian-users] r4d 1.7 1st impressions</H1>
+    <B>Thomas Leonard</B> 
+    <A HREF="mailto:rox4debian-users%40lists.berlios.de?Subject=Re%3A%20%5BRox4debian-users%5D%20r4d%201.7%201st%20impressions&In-Reply-To=%3Ccd53a0140605311347w569d8be2o7f296c5645b45b74%40mail.gmail.com%3E"
+       TITLE="[Rox4debian-users] r4d 1.7 1st impressions">talex5 at gmail.com
+       </A><BR>
+    <I>Wed May 31 22:47:28 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000012.html">[Rox4debian-users] r4d 1.7 1st impressions
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#13">[ date ]</a>
+              <a href="thread.html#13">[ thread ]</a>
+              <a href="subject.html#13">[ subject ]</a>
+              <a href="author.html#13">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 5/31/06, Dennis Tomas &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rox4debian-users">2tomas at informatik.uni-hamburg.de</A>&gt; wrote:
+&gt;<i> Dan MacDonald wrote:
+</I>&gt;<i> &gt; Hi Dennis!
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; I noticed r4d 1.7 has been released so I just had a
+</I>&gt;<i> &gt; very quick go with it. This time I deleted .config and
+</I>&gt;<i> &gt; .cache to see what the new defaults are like.
+</I>
+Note that you should never need to delete .cache to make anything
+work. All deleting it will do is make you need to download things
+again.
+
+(Because things in the cache are currently owned by you, it is
+possible to edit them and thus break it if you try hard enough.
+However, you can detect changes with '0store verify' and in future
+I'll get it to put them somewhere read-only, so I'd only delete it as
+a last resort.)
+
+&gt;<i> &gt; * The png icons for ROX-filer and oroborox failed to
+</I>&gt;<i> &gt; download (again, no biggie) and I got a big error that
+</I>&gt;<i> &gt; I can't remember when rox-filer was downloading but it
+</I>&gt;<i> &gt; downloaded OK. Also, everything seemed to get
+</I>&gt;<i> &gt; downloaded twice for some reason?
+</I>&gt;<i> &gt;
+</I>&gt;<i> Strange. Maybe it has to do with 0install? Doesn't happen here with
+</I>&gt;<i> 0install 0.20.
+</I>
+Most likely the rox.sf.net web-site was down briefly.
+[...]
+&gt;<i> If you don't want to wait, you can get ROX-Filer from svn. Just type:
+</I>&gt;<i>
+</I>&gt;<i> svn co <A HREF="https://svn.sourceforge.net/svnroot/rox/trunk/rox">https://svn.sourceforge.net/svnroot/rox/trunk/rox</A> rox
+</I>&gt;<i>
+</I>&gt;<i> and [...]
+</I>
+$ 0launch --feed rox/ROX-Filer.xml
+
+is easier, and will work with any other application that tries to run
+ROX-Filer too. It will also automatically stop using the svn version
+if a newer release comes out and you don't update it, as it just adds
+the svn version to the existing list of available versions to choose
+from.
+
+&gt;<i> &gt; Thomas Leonard said that anyone can organise a new
+</I>&gt;<i> &gt; release of rox-filer. I suppose we should ask on
+</I>&gt;<i> &gt; rox-devel first to see if anybody else is already
+</I>&gt;<i> &gt; doing it/wants to do it but if not might you create
+</I>&gt;<i> &gt; the next release so we will have SOAP support?
+</I>&gt;<i> If nobody else wants to do it, I'll have a look how it's done and how
+</I>&gt;<i> much time it would take.
+</I>&gt;<i> But I'd prefer if somebody else did, so I can concentrate on rox4debian
+</I>&gt;<i> and the Media-app.
+</I>
+I can make the actual release package. Mainly it just needs someone
+with a little time to announce the dates and generally keep it on
+track.
+
+
+-- 
+Dr Thomas Leonard		<A HREF="http://rox.sourceforge.net">http://rox.sourceforge.net</A>
+GPG: 9242 9807 C985 3C07 44A6  8B9A AE07 8280 59A5 3CC1
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000012.html">[Rox4debian-users] r4d 1.7 1st impressions
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#13">[ date ]</a>
+              <a href="thread.html#13">[ thread ]</a>
+              <a href="subject.html#13">[ subject ]</a>
+              <a href="author.html#13">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rox4debian-users">More information about the Rox4debian-users
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rox4debian-users] New version of ROX4Debian available
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rox4debian-users/2006-June/index.html" >
+   <LINK REL="made" HREF="mailto:rox4debian-users%40lists.berlios.de?Subject=Re%3A%20%5BRox4debian-users%5D%20New%20version%20of%20ROX4Debian%20available&In-Reply-To=%3C44A2B32B.8080204%40informatik.uni-hamburg.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000032.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rox4debian-users] New version of ROX4Debian available</H1>
+    <B>Dennis Tomas</B> 
+    <A HREF="mailto:rox4debian-users%40lists.berlios.de?Subject=Re%3A%20%5BRox4debian-users%5D%20New%20version%20of%20ROX4Debian%20available&In-Reply-To=%3C44A2B32B.8080204%40informatik.uni-hamburg.de%3E"
+       TITLE="[Rox4debian-users] New version of ROX4Debian available">2tomas at informatik.uni-hamburg.de
+       </A><BR>
+    <I>Wed Jun 28 18:49:47 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000032.html">[Rox4debian-users] usb unmount problem fixed
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#33">[ date ]</a>
+              <a href="thread.html#33">[ thread ]</a>
+              <a href="subject.html#33">[ subject ]</a>
+              <a href="author.html#33">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi!
+
+I've uploaded the new versions of all my rox4debian packages.
+
+
+main changes:
+
+- replaced gmrun and gksu with my new app &quot;Execute&quot;, because of gksu's 
+big amount of dependencies
+
+- added ROXTerm, Trashcan
+
+- wrapper for Mail-application
+
+- Web-Brower / Terminal / Mail wrappers now use  
+~/.config/rox.sourceforge.net/handlers, so they can be different for 
+different users
+
+- lighter gtk-theme by default
+
+- i18n for dialogs such as logout, halt, reboot and run as root 
+(currently only german)
+
+
+Add this to your /etc/apt/sources.list (if you haven't already):
+deb <A HREF="ftp://ftp.berlios.de/pub/rox4debian">ftp://ftp.berlios.de/pub/rox4debian</A> binary/
+
+
+To upgrade, simply type (as root):
+apt-get update
+apt-get install rox-desktop rox-desktop-core rox-menu-method
+
+
+If you want to help with translation, you can find templates here:
+<A HREF="ftp://ftp.berlios.de/pub/rox4debian/i18n">ftp://ftp.berlios.de/pub/rox4debian/i18n</A>
+
+
+Greetings,
+
+Dennis
+
+
+		
+___________________________________________________________ 
+Telefonate ohne weitere Kosten vom PC zum PC: <A HREF="http://messenger.yahoo.de">http://messenger.yahoo.de</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000032.html">[Rox4debian-users] usb unmount problem fixed
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#33">[ date ]</a>
+              <a href="thread.html#33">[ thread ]</a>
+              <a href="subject.html#33">[ subject ]</a>
+              <a href="author.html#33">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rox4debian-users">More information about the Rox4debian-users
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,760 @@
+From 2tomas at informatik.uni-hamburg.de  Tue May 23 10:09:45 2006
+From: 2tomas at informatik.uni-hamburg.de (Dennis Tomas)
+Date: Tue, 23 May 2006 10:09:45 +0200
+Subject: [Rox4debian-users] test
+Message-ID: <4472C349.1090909@informatik.uni-hamburg.de>
+
+test
+
+	
+
+	
+		
+___________________________________________________________ 
+Telefonate ohne weitere Kosten vom PC zum PC: http://messenger.yahoo.de
+
+
+From 2tomas at informatik.uni-hamburg.de  Sun May 28 13:21:15 2006
+From: 2tomas at informatik.uni-hamburg.de (Dennis Tomas)
+Date: Sun, 28 May 2006 13:21:15 +0200
+Subject: [Rox4debian-users] [ANNOUNCE] rox4debian 5 released
+Message-ID: <447987AB.3050209@informatik.uni-hamburg.de>
+
+Hello!
+
+I've uploaded version 5 of the rox4debian desktop package.
+
+New features:
+- wrappers for gnome-system-tools, synaptic and bum in Apps/Configuration
+- inserted Audio-CDs and Video-DVDs are added to the panel and can be 
+played by clicking them
+- if cddb and cd-discid are installed, the Audio-CDs show up with the 
+right label
+
+Install instructions:
+1) move ~/.config/rox.sourceforge.net out of the way. (Sorry, I'll try 
+to avoid this next time!)
+
+2) su
+
+3) if you haven't already, add this to your /etc/apt/sources.list:
+deb ftp://ftp.berlios.de/pub/rox4debian binary/
+
+4) apt-get update
+
+5) apt-get install rox-desktop
+
+
+Greetings,
+
+Dennis
+
+
+		
+___________________________________________________________ 
+Telefonate ohne weitere Kosten vom PC zum PC: http://messenger.yahoo.de
+
+
+From danboid at yahoo.co.uk  Sun May 28 18:27:32 2006
+From: danboid at yahoo.co.uk (Dan MacDonald)
+Date: Sun, 28 May 2006 09:27:32 -0700 (PDT)
+Subject: [Rox4debian-users] Re: [rox-devel] [ANNOUNCE] rox4debian 5 released
+In-Reply-To: <447987AB.3050209@informatik.uni-hamburg.de>
+Message-ID: <20060528162732.6265.qmail@web26004.mail.ukl.yahoo.com>
+
+Sorry Dennis, there are still a few kinks to be ironed
+out in ROX4Debian. I'm happy to see TL has updated the
+Debian install instructions but it seems strange that
+he included an extract from one of DT's replies to one
+of my e-mails without including what it is he's
+replying to. Just looks a bit strange.
+
+> Install instructions:
+> 1) move ~/.config/rox.sourceforge.net out of the
+> way. (Sorry, I'll try 
+> to avoid this next time!)
+
+I did that before logging into v5 but there was still
+no taskbar so I deleted all of ~/.config, ~/.cache and
+~/.ivman before logging in again. After 0install did
+its stuff I DID have a working Taskbar- yippee!
+
+BUT
+
+* ROX-Lib.png and SystemTrayN both failed to download
+(didn't bother me though)
+
+* I noticed that the Taskbar has its own libwnck so
+two copies of libwnck (I go blind if I carry on like
+this :) get downloaded. Why can't Taskbar use the same
+libwnck as everything else?
+
+* 2 ROX-Session icons appear on a fresh install- one
+on the desktop and one on the panel. Just the panel
+one for me please (and on the far left to keep
+ex-windows addicts happy why not?)
+
+* Why does the pager only default to be 3 desktops
+wide? The unix standard has been 4 virtual desktops
+since Christ used fvwm :D Bring back my 4th desktop!
+
+Additionally, I'd like to see the Wallpaper app added
+to the standard Apps link collection
+
+We'll get there!
+
+dan
+
+__________________________________________________
+Do You Yahoo!?
+Tired of spam?  Yahoo! Mail has the best spam protection around 
+http://mail.yahoo.com 
+
+
+From 2tomas at informatik.uni-hamburg.de  Sun May 28 19:45:41 2006
+From: 2tomas at informatik.uni-hamburg.de (Dennis Tomas)
+Date: Sun, 28 May 2006 19:45:41 +0200
+Subject: [Rox4debian-users] Re: [rox-devel] [ANNOUNCE] rox4debian 5 released
+In-Reply-To: <20060528162732.6265.qmail@web26004.mail.ukl.yahoo.com>
+References: <20060528162732.6265.qmail@web26004.mail.ukl.yahoo.com>
+Message-ID: <4479E1C5.4080101@informatik.uni-hamburg.de>
+
+Dan MacDonald wrote:
+> * I noticed that the Taskbar has its own libwnck so
+> two copies of libwnck (I go blind if I carry on like
+> this :) get downloaded. Why can't Taskbar use the same
+> libwnck as everything else?
+>   
+I tried, but I get a strange problem when I compile it with libwnck4 and 
+then run it with the 0install-version of libwnck4:
+The titles of the task entries go over their boundaries, which makes the 
+Tasklist unreadable. As soon as this problem is solved, I will use 
+libwnck4. Or the pager could use libwnck18 if that's possible.
+
+> * 2 ROX-Session icons appear on a fresh install- one
+> on the desktop and one on the panel. Just the panel
+> one for me please (and on the far left to keep
+> ex-windows addicts happy why not?)
+>   
+I put the home-dir to the bottom left, because it's the item most often 
+used, I suppose. Especially if you're working with inaccurate input 
+devices it's the easiest to hit a corner of the screen. The left one 
+seemed most common to me. The logout button looks good to me in the 
+bottom right corner. Honestly, I don't know where to put it instead. 
+Between all the "places" on the left it would feel very out-of-place. 
+Its icon is also very intuitive, so even ex-windows-users will 
+immediately get its meaning, regardless where it is.
+I just put it on the pinboard because 6 items looked better to me than 5 
+;-) Maybe I'll replace it with something else, but I don't know what yet.
+
+> * Why does the pager only default to be 3 desktops
+> wide? The unix standard has been 4 virtual desktops
+> since Christ used fvwm :D Bring back my 4th desktop!
+>   
+Ok. But you can configure this quite easily by using 
+Apps/Configuration/Window Manager. (Does it work?)
+
+> Additionally, I'd like to see the Wallpaper app added
+> to the standard Apps link collection
+>   
+I'll have a look.
+
+PS: Please use the rox4debian mailing list to avoid bothering all rox 
+developers with problems related only to the debian package.
+
+
+		
+___________________________________________________________ 
+Telefonate ohne weitere Kosten vom PC zum PC: http://messenger.yahoo.de
+
+
+From 2tomas at informatik.uni-hamburg.de  Sun May 28 22:06:16 2006
+From: 2tomas at informatik.uni-hamburg.de (Dennis Tomas)
+Date: Sun, 28 May 2006 22:06:16 +0200
+Subject: [Rox4debian-users] Re: [rox-devel] [ANNOUNCE] rox4debian 5 released
+In-Reply-To: <20060528211641.7b842e3b@absurd>
+References: <20060528162732.6265.qmail@web26004.mail.ukl.yahoo.com>	<4479E1C5.4080101@informatik.uni-hamburg.de>	<4479E3FF.9070503@informatik.uni-hamburg.de> <20060528211641.7b842e3b@absurd>
+Message-ID: <447A02B8.1090406@informatik.uni-hamburg.de>
+
+Janek Kozicki wrote:
+> I'm very happy that you have started a rox4debian project. I remember
+> there were many efforts during years to do that. But after years they
+> have died off. Their biggest problem was that they didn't get into the
+> official distribution. People could download debs from project's website
+> and were all happy until the project died. And debs disappeared or
+> became too old.
+>
+> Currently in debian we have rox-filer, but this is far from satisfying :(
+>
+> There should be rox-session too, and rox-extras (all rox additional
+> software from rox homepage bundled together - or they could be separated,
+> but it'll make about twenty separate packages)
+>   
+I gave up on packaging rox apps directly for debian, because it's a 
+packaging and maintaining nightmare: Due to the debian policy, you have 
+to spread an appdir across the whole filesystem and often patch the app 
+in many places.
+And you have to package every new version, which causes delays and often 
+new problems.
+
+So my new approach is to just put wrappers into 
+/usr/share/rox-desktop/Apps which use the 0install-system in order to 
+run/update. I even don't use the rox-filer package that is in debian. I 
+just include a login-script that runs ROX-Session (and therefore 
+ROX-Filer) through 0install.
+
+The main advantages are that a user gets new versions of apps 
+immediately when they are released, and that I can concentrate on other 
+things (e.g. automounting via ivman/hal and auto-generated 
+appdir-wrappers for the debian-menu-system) than repackaging apps and 
+fix package-related bugs.
+
+> The crucial point here is that once rox fully gets into debian, it won't
+> be removed. If you lose interest in maintaining it, surely someone else
+> will take it over. And most importantly it won't be a completely new
+> initiative - but a continuation of old an initiative. A thing that is
+> much more convenient for the end users.
+>
+> so - what is the status of adding rox entirely to debian distribution?
+> My friend knows a debian pacakger (and perhaps he could ask him), but
+> maybe you have better connections with debian?
+>   
+No, I don't have any connections to debian packagers.
+I haven't tried to put it into debian, because its status is still quite 
+experimental and I'm not an official debian-maintainer. Once it has 
+reached a certain degree of stability I'll try to become one and add it.
+
+However, I'm still not sure if it fully complies to the debian policy, 
+because it uses 0install, which adds a different way of installing 
+software to debian, which - as someone pointed out on the mailing list 
+of the old rox-in-debian project - isn't allowed. I think I'll have to 
+read the policy again.
+
+
+		
+___________________________________________________________ 
+Telefonate ohne weitere Kosten vom PC zum PC: http://messenger.yahoo.de
+
+
+From 2tomas at informatik.uni-hamburg.de  Mon May 29 16:19:22 2006
+From: 2tomas at informatik.uni-hamburg.de (Dennis Tomas)
+Date: Mon, 29 May 2006 16:19:22 +0200
+Subject: [Rox4debian-users] Re: [rox-devel] rox4debian 5 automount problems
+In-Reply-To: <20060529131019.29606.qmail@web26010.mail.ukl.yahoo.com>
+References: <20060529131019.29606.qmail@web26010.mail.ukl.yahoo.com>
+Message-ID: <447B02EA.1020108@informatik.uni-hamburg.de>
+
+Dan MacDonald wrote:
+> Sorry to post another rox4debian bug report on this
+> list as it seems there is a separate list for
+> rox4debian now but I don't think I'm subscribed and I
+> don't know how to subscribe either. Soon as I know
+> that I'm registered I'll post future bugs to the
+> appropriate list.
+>   
+You can subscribe here: 
+http://lists.berlios.de/mailman/listinfo/rox4debian-users
+> Small 'bug'
+>
+> I'm happy to see that when I insert an audio CD a CD
+> icon is displayed in the panel. However, it still
+> shows a grey box with green blob for data CDs.
+>   
+It's because the code for setting an icon via SOAP rpc isn't in the 
+filer yet.
+Thomas, are you planning to include it? It's of good use for my project.
+
+> Big bug
+>
+> Removing an ejected usb disc causes automounting to
+> stop working. 
+>
+> On the same machine with the same kernel, HAL version
+> etc. but running KDE instead I can insert and remove
+> USB disks as much as I like without problem. Under
+> rox4debian 5 you insert a USB disc, open it, eject the
+> disc by right-clicking on its icon and choosing
+> 'eject' then physically disconnect the disc and it
+> brings up a rox-session error window saying:
+>
+> "Your login script ('%s') failed. I'll give you an
+> xterm to try and fix it. ROX-session itself is still
+> running though - run a second time to logout"
+>
+> After OKing that message automounting stops working
+> for both USB and optical drives unless you log out of
+> ROX and log back in.
+>   
+This means that ivman has crashed.
+I've just uploaded version 1-6 (the previous was really "1-5", I called 
+it "5" by mistake), so you can try upgrading and see if it still 
+happens. After installing 1-6, you needn't remove any directory, just 
+copy 
+/usr/share/rox-desktop/defaults/rox.sourceforge.net/ROX-Session/Login 
+into ~/.config/rox.sourceforge.net/ROX-Session, overwriting the old 
+Login-script. Then add the "--debug" option to the last command in the 
+file (the one that starts ivman).
+When automounting stops to work, right-click on the Logout-button and 
+choose "Message Log...". What does it say?
+What are the last few lines of "~/.rox4debian/rox-desktop/disks.log"?
+
+
+	
+
+	
+		
+___________________________________________________________ 
+Telefonate ohne weitere Kosten vom PC zum PC: http://messenger.yahoo.de
+
+
+From danboid at yahoo.co.uk  Mon May 29 18:38:10 2006
+From: danboid at yahoo.co.uk (Dan MacDonald)
+Date: Mon, 29 May 2006 09:38:10 -0700 (PDT)
+Subject: [Rox4debian-users] ivman probs
+Message-ID: <20060529163810.21652.qmail@web26002.mail.ukl.yahoo.com>
+
+Hi Dennis!
+
+I noticed the SOAP patch is in ROX now, so I expect
+the next rox-desktop release will feature different
+icons for different storage media?
+
+I installed rox-desktop 1.6 but, strangely enough, I'm
+having a different problem now.
+
+If I have the ivman daemon disabled, USB automounting
+works fine under KDE but doesn't work at all under
+ROX. If I enable it, I get the same problem under both
+KDE and ROX- the USB disc appears on the panel/desktop
+and I can open it but I can't eject it as it says
+
+---------------------------------------
+
+Eject '/media/sda1'
+Error: device /dev/sda1 was not mounted by you
+eject: unmount of `/media/sda1' failed
+eject failed
+
+Done
+There was one error.
+
+------------------------------------------
+
+As you recommended, I didn't delete ~/.config, .cache
+and .ivman
+
+After trying to eject the disc, I have this is my
+ROX-session message log:
+
+-------------------------------------------
+
+ROX-Session started: Mon May 29 17:34:06 2006
+(/usr/bin/openbox:3326): ObRender-WARNING **: Failed
+to load the theme 'Clearlooks'
+Falling back to the default: 'TheBear'
+I/O 
+warning : 
+failed to load external entity
+"/home/n/.config/openbox/debian-menu.xml"
+I/O 
+warning : 
+failed to load external entity
+"/etc/xdg/openbox/debian-menu.xml"
+(/usr/bin/openbox:3326): ObParser-WARNING **: unable
+to find a valid menu file 'debian-menu.xml'
+I/O 
+warning : 
+failed to load external entity
+"/home/n/.config/openbox/menu.xml"
+
+----------------------------
+
+Maybe I should delete ~/.ivman and log back into ROX?
+You said put a --debug at the end of ivman line in the
+Login file- I presume you meant just before the & like
+this-
+
+/usr/bin/ivman -c
+/etc/xdg/rox4debian.berlios.de/rox-desktop/ivman
+--debug &
+
+?
+
+dan
+
+__________________________________________________
+Do You Yahoo!?
+Tired of spam?  Yahoo! Mail has the best spam protection around 
+http://mail.yahoo.com 
+
+
+From danboid at yahoo.co.uk  Tue May 30 01:44:35 2006
+From: danboid at yahoo.co.uk (Dan MacDonald)
+Date: Mon, 29 May 2006 16:44:35 -0700 (PDT)
+Subject: [Rox4debian-users] media hysteria, fame, fortune and... geek news sites :)
+In-Reply-To: <20060529163810.21652.qmail@web26002.mail.ukl.yahoo.com>
+Message-ID: <20060529234435.39683.qmail@web26013.mail.ukl.yahoo.com>
+
+Waaay!
+
+Look Den, we've made the news! :D
+
+http://www.osnews.com/story.php?news_id=14746
+
+http://www.drobe.co.uk/alternative/artifact1622.html
+
+Dr. Leonard deserved a bit of a mention I think-
+thanks Thomas and Tomas! :P
+
+dan
+
+__________________________________________________
+Do You Yahoo!?
+Tired of spam?  Yahoo! Mail has the best spam protection around 
+http://mail.yahoo.com 
+
+
+From rdmyers.42 at gmail.com  Tue May 30 17:18:08 2006
+From: rdmyers.42 at gmail.com (Rodney D. Myers)
+Date: Tue, 30 May 2006 08:18:08 -0700
+Subject: [Rox4debian-users] Re: Rox4debian-users -- confirmation of subscription -- request
+ 968352
+In-Reply-To: <20060530150146.7104.23160.Mailman@bat.berlios.de>
+References: <20060530150146.7104.23160.Mailman@bat.berlios.de>
+Message-ID: <20060530081808.364e7b2e@riverside.hitwe.org>
+
+On Tue, 30 May 2006 17:01:46 +0200
+rox4debian-users-request at berlios.de wrote:
+
+> Rox4debian-users -- confirmation of subscription -- request 968352
+> 
+> We have received a request from 12.198.196.202 for subscription of
+> your email address, <rdmyers.42 at gmail.com>, to the
+> rox4debian-users at lists.berlios.de mailing list.  To confirm the
+> request, please send a message to
+> rox4debian-users-request at lists.berlios.de, and either:
+> 
+> - maintain the subject line as is (the reply's additional "Re:" is
+> ok),
+> 
+> - or include the following line - and only the following line - in the
+> message body: 
+> 
+> confirm 968352
+> 
+> (Simply sending a 'reply' to this message should work from most email
+> interfaces, since that usually leaves the subject line in the right
+> form.)
+> 
+> If you do not wish to subscribe to this list, please simply disregard
+> this message.  Send questions to
+> rox4debian-users-admin at lists.berlios.de.
+
+
+From 2tomas at informatik.uni-hamburg.de  Tue May 30 23:30:10 2006
+From: 2tomas at informatik.uni-hamburg.de (Dennis Tomas)
+Date: Tue, 30 May 2006 23:30:10 +0200
+Subject: [Rox4debian-users] ivman probs
+In-Reply-To: <20060529163810.21652.qmail@web26002.mail.ukl.yahoo.com>
+References: <20060529163810.21652.qmail@web26002.mail.ukl.yahoo.com>
+Message-ID: <447CB962.8080400@informatik.uni-hamburg.de>
+
+Dan MacDonald wrote:
+> Hi Dennis!
+>
+> I noticed the SOAP patch is in ROX now, so I expect
+> the next rox-desktop release will feature different
+> icons for different storage media?
+>   
+Yes, the code that asks rox to set icons is already in rox-desktop, just 
+waiting for rox to support it. As soon as the next version of ROX-Filer 
+is out, it should work!
+> I installed rox-desktop 1.6 but, strangely enough, I'm
+> having a different problem now.
+>
+> If I have the ivman daemon disabled, USB automounting
+> works fine under KDE but doesn't work at all under
+> ROX. If I enable it, I get the same problem under both
+> KDE and ROX- the USB disc appears on the panel/desktop
+> and I can open it but I can't eject it as it says
+>
+> ---------------------------------------
+>
+> Eject '/media/sda1'
+> Error: device /dev/sda1 was not mounted by you
+> eject: unmount of `/media/sda1' failed
+> eject failed
+>
+> Done
+> There was one error.
+>   
+What does ls -l /media/sda1 say? Who owns it?
+Is your user in the plugdev group?
+
+
+		
+___________________________________________________________ 
+Telefonate ohne weitere Kosten vom PC zum PC: http://messenger.yahoo.de
+
+
+From danboid at yahoo.co.uk  Wed May 31 20:59:34 2006
+From: danboid at yahoo.co.uk (Dan MacDonald)
+Date: Wed, 31 May 2006 11:59:34 -0700 (PDT)
+Subject: [Rox4debian-users] r4d 1.7 1st impressions
+Message-ID: <20060531185934.98158.qmail@web26014.mail.ukl.yahoo.com>
+
+Hi Dennis!
+
+I noticed r4d 1.7 has been released so I just had a
+very quick go with it. This time I deleted .config and
+.cache to see what the new defaults are like. There
+was no .ivman to delete
+
+* Automounting seems to be working again (got to test
+KDE with ivman enabled see if its still causing
+problems- not that thats a major thing wrt this
+project really)
+
+* The png icons for ROX-filer and oroborox failed to
+download (again, no biggie) and I got a big error that
+I can't remember when rox-filer was downloading but it
+downloaded OK. Also, everything seemed to get
+downloaded twice for some reason?
+
+* Glad to see the return of 4 desktops on the pager
+
+* Please add Wallpaper to the default Apps
+
+* It seems that you do include default run actions for
+most file types but pretty much the only one that
+works is using gnumeric for .xls files. For Abiword
+(.doc), xpdf, pics (gthumb) I have to set it myself to
+
+
+abiword "$@"
+
+etc. By default, clicking on a .doc/.pdf/whatever will
+open abiword/xpdf/whatever but the document will not
+be opened too, just the program.
+
+Thomas Leonard said that anyone can organise a new
+release of rox-filer. I suppose we should ask on
+rox-devel first to see if anybody else is already
+doing it/wants to do it but if not might you create
+the next release so we will have SOAP support?
+
+Also, what packages need to be installed to get video
+thumbnails working properly, especially for mplayer.
+
+dan
+
+__________________________________________________
+Do You Yahoo!?
+Tired of spam?  Yahoo! Mail has the best spam protection around 
+http://mail.yahoo.com 
+
+
+From 2tomas at informatik.uni-hamburg.de  Wed May 31 20:36:32 2006
+From: 2tomas at informatik.uni-hamburg.de (Dennis Tomas)
+Date: Wed, 31 May 2006 20:36:32 +0200
+Subject: [Rox4debian-users] [ANNOUNCE] version 1-7 of rox-desktop out now
+Message-ID: <447DE230.6030206@informatik.uni-hamburg.de>
+
+The version 1-7 of the rox-desktop package is now available.
+The main change is that automounting is no longer directly integrated 
+into the package, but separately available through 0install as 
+application called "Media". This way all ROX-users can use it and we 
+will have a better chance to find bugs due to (hopefully) more eyes 
+looking at it. It is however downloaded and run at login, so you don't 
+have to install it manually.
+
+
+To install rox-desktop:
+
+apt-get update
+apt-get install rox-desktop
+
+
+Before first login, a user should remove the directory ~/.rox4debian if 
+it exists.
+
+if the directory ~/.config/rox.sourceforge.net exists:
+  - remove all lines after "done" in 
+~/.config/rox.sourceforge.net/ROX-Session/Login
+  - drag /usr/share/rox-desktop/Apps/Media into 
+~/.config/rox.sourceforge.net/ROX-Session/AutoStart
+
+- logout
+- choose "ROX-Desktop" as session and log in again
+
+
+
+		
+___________________________________________________________ 
+Telefonate ohne weitere Kosten vom PC zum PC: http://messenger.yahoo.de
+
+
+From 2tomas at informatik.uni-hamburg.de  Wed May 31 22:25:02 2006
+From: 2tomas at informatik.uni-hamburg.de (Dennis Tomas)
+Date: Wed, 31 May 2006 22:25:02 +0200
+Subject: [Rox4debian-users] r4d 1.7 1st impressions
+In-Reply-To: <20060531185934.98158.qmail@web26014.mail.ukl.yahoo.com>
+References: <20060531185934.98158.qmail@web26014.mail.ukl.yahoo.com>
+Message-ID: <447DFB9E.9080203@informatik.uni-hamburg.de>
+
+Dan MacDonald wrote:
+> Hi Dennis!
+>
+> I noticed r4d 1.7 has been released so I just had a
+> very quick go with it. This time I deleted .config and
+> .cache to see what the new defaults are like. There
+> was no .ivman to delete
+It doesn't use .ivman anymore, but uses its private config directory 
+inside Media's appdir.
+>
+> * Automounting seems to be working again (got to test
+> KDE with ivman enabled see if its still causing
+> problems- not that thats a major thing wrt this
+> project really)
+>
+> * The png icons for ROX-filer and oroborox failed to
+> download (again, no biggie) and I got a big error that
+> I can't remember when rox-filer was downloading but it
+> downloaded OK. Also, everything seemed to get
+> downloaded twice for some reason?
+>
+Strange. Maybe it has to do with 0install? Doesn't happen here with 
+0install 0.20.
+> * Glad to see the return of 4 desktops on the pager
+>
+> * Please add Wallpaper to the default Apps
+>
+Ok.
+> * It seems that you do include default run actions for
+> most file types but pretty much the only one that
+> works is using gnumeric for .xls files. 
+I don't include any default run actions. They are set automatically by 
+rox-menu-method. Every time you install some new software (via apt), the 
+menu-method reads the .desktop-files in /usr/share/applications and sets 
+system-wide run-actions and sendto-items.
+> For Abiword
+> (.doc), xpdf, pics (gthumb) I have to set it myself to
+>
+>
+> abiword "$@"
+>
+> etc. By default, clicking on a .doc/.pdf/whatever will
+> open abiword/xpdf/whatever but the document will not
+> be opened too, just the program.
+That's a bug in ROX-Filer that was recently fixed. It's because some 
+.desktop-files don't have an Exec-entry like e.g. "abiword %F" (%F 
+indicates it can open files) but just "abiword". The next filer release 
+will fix this issue.
+If you don't want to wait, you can get ROX-Filer from svn. Just type:
+
+svn co https://svn.sourceforge.net/svnroot/rox/trunk/rox rox
+
+and create a script ~/.config/rox.sourceforge.net/ROX-Session/RunROX
+
+which looks something like this:
+
+#! /bin/sh
+/path/to/ROX-Filer/AppRun -S
+
+and make it executable. Then restart ROX-Session.
+> Thomas Leonard said that anyone can organise a new
+> release of rox-filer. I suppose we should ask on
+> rox-devel first to see if anybody else is already
+> doing it/wants to do it but if not might you create
+> the next release so we will have SOAP support?
+If nobody else wants to do it, I'll have a look how it's done and how 
+much time it would take.
+But I'd prefer if somebody else did, so I can concentrate on rox4debian 
+and the Media-app.
+> Also, what packages need to be installed to get video
+> thumbnails working properly, especially for mplayer.
+>
+Don't know. I thought you just needed mplayer >= 0.90. At least the 
+README of VideoThumbnails says so.
+
+
+	
+
+	
+		
+___________________________________________________________ 
+Telefonate ohne weitere Kosten vom PC zum PC: http://messenger.yahoo.de
+
+
+From talex5 at gmail.com  Wed May 31 22:47:28 2006
+From: talex5 at gmail.com (Thomas Leonard)
+Date: Wed, 31 May 2006 21:47:28 +0100
+Subject: [Rox4debian-users] r4d 1.7 1st impressions
+In-Reply-To: <447DFB9E.9080203@informatik.uni-hamburg.de>
+References: <20060531185934.98158.qmail@web26014.mail.ukl.yahoo.com>
+	 <447DFB9E.9080203@informatik.uni-hamburg.de>
+Message-ID: <cd53a0140605311347w569d8be2o7f296c5645b45b74@mail.gmail.com>
+
+On 5/31/06, Dennis Tomas <2tomas at informatik.uni-hamburg.de> wrote:
+> Dan MacDonald wrote:
+> > Hi Dennis!
+> >
+> > I noticed r4d 1.7 has been released so I just had a
+> > very quick go with it. This time I deleted .config and
+> > .cache to see what the new defaults are like.
+
+Note that you should never need to delete .cache to make anything
+work. All deleting it will do is make you need to download things
+again.
+
+(Because things in the cache are currently owned by you, it is
+possible to edit them and thus break it if you try hard enough.
+However, you can detect changes with '0store verify' and in future
+I'll get it to put them somewhere read-only, so I'd only delete it as
+a last resort.)
+
+> > * The png icons for ROX-filer and oroborox failed to
+> > download (again, no biggie) and I got a big error that
+> > I can't remember when rox-filer was downloading but it
+> > downloaded OK. Also, everything seemed to get
+> > downloaded twice for some reason?
+> >
+> Strange. Maybe it has to do with 0install? Doesn't happen here with
+> 0install 0.20.
+
+Most likely the rox.sf.net web-site was down briefly.
+[...]
+> If you don't want to wait, you can get ROX-Filer from svn. Just type:
+>
+> svn co https://svn.sourceforge.net/svnroot/rox/trunk/rox rox
+>
+> and [...]
+
+$ 0launch --feed rox/ROX-Filer.xml
+
+is easier, and will work with any other application that tries to run
+ROX-Filer too. It will also automatically stop using the svn version
+if a newer release comes out and you don't update it, as it just adds
+the svn version to the existing list of available versions to choose
+from.
+
+> > Thomas Leonard said that anyone can organise a new
+> > release of rox-filer. I suppose we should ask on
+> > rox-devel first to see if anybody else is already
+> > doing it/wants to do it but if not might you create
+> > the next release so we will have SOAP support?
+> If nobody else wants to do it, I'll have a look how it's done and how
+> much time it would take.
+> But I'd prefer if somebody else did, so I can concentrate on rox4debian
+> and the Media-app.
+
+I can make the actual release package. Mainly it just needs someone
+with a little time to announce the dates and generally keep it on
+track.
+
+
+-- 
+Dr Thomas Leonard		http://rox.sourceforge.net
+GPG: 9242 9807 C985 3C07 44A6  8B9A AE07 8280 59A5 3CC1
+
+

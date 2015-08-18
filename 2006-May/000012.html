@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rox4debian-users] r4d 1.7 1st impressions
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rox4debian-users/2006-May/index.html" >
+   <LINK REL="made" HREF="mailto:rox4debian-users%40lists.berlios.de?Subject=Re%3A%20%5BRox4debian-users%5D%20r4d%201.7%201st%20impressions&In-Reply-To=%3C447DFB9E.9080203%40informatik.uni-hamburg.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000010.html">
+   <LINK REL="Next"  HREF="000013.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rox4debian-users] r4d 1.7 1st impressions</H1>
+    <B>Dennis Tomas</B> 
+    <A HREF="mailto:rox4debian-users%40lists.berlios.de?Subject=Re%3A%20%5BRox4debian-users%5D%20r4d%201.7%201st%20impressions&In-Reply-To=%3C447DFB9E.9080203%40informatik.uni-hamburg.de%3E"
+       TITLE="[Rox4debian-users] r4d 1.7 1st impressions">2tomas at informatik.uni-hamburg.de
+       </A><BR>
+    <I>Wed May 31 22:25:02 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000010.html">[Rox4debian-users] r4d 1.7 1st impressions
+</A></li>
+        <LI>Next message: <A HREF="000013.html">[Rox4debian-users] r4d 1.7 1st impressions
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#12">[ date ]</a>
+              <a href="thread.html#12">[ thread ]</a>
+              <a href="subject.html#12">[ subject ]</a>
+              <a href="author.html#12">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Dan MacDonald wrote:
+&gt;<i> Hi Dennis!
+</I>&gt;<i>
+</I>&gt;<i> I noticed r4d 1.7 has been released so I just had a
+</I>&gt;<i> very quick go with it. This time I deleted .config and
+</I>&gt;<i> .cache to see what the new defaults are like. There
+</I>&gt;<i> was no .ivman to delete
+</I>It doesn't use .ivman anymore, but uses its private config directory 
+inside Media's appdir.
+&gt;<i>
+</I>&gt;<i> * Automounting seems to be working again (got to test
+</I>&gt;<i> KDE with ivman enabled see if its still causing
+</I>&gt;<i> problems- not that thats a major thing wrt this
+</I>&gt;<i> project really)
+</I>&gt;<i>
+</I>&gt;<i> * The png icons for ROX-filer and oroborox failed to
+</I>&gt;<i> download (again, no biggie) and I got a big error that
+</I>&gt;<i> I can't remember when rox-filer was downloading but it
+</I>&gt;<i> downloaded OK. Also, everything seemed to get
+</I>&gt;<i> downloaded twice for some reason?
+</I>&gt;<i>
+</I>Strange. Maybe it has to do with 0install? Doesn't happen here with 
+0install 0.20.
+&gt;<i> * Glad to see the return of 4 desktops on the pager
+</I>&gt;<i>
+</I>&gt;<i> * Please add Wallpaper to the default Apps
+</I>&gt;<i>
+</I>Ok.
+&gt;<i> * It seems that you do include default run actions for
+</I>&gt;<i> most file types but pretty much the only one that
+</I>&gt;<i> works is using gnumeric for .xls files. 
+</I>I don't include any default run actions. They are set automatically by 
+rox-menu-method. Every time you install some new software (via apt), the 
+menu-method reads the .desktop-files in /usr/share/applications and sets 
+system-wide run-actions and sendto-items.
+&gt;<i> For Abiword
+</I>&gt;<i> (.doc), xpdf, pics (gthumb) I have to set it myself to
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> abiword &quot;$@&quot;
+</I>&gt;<i>
+</I>&gt;<i> etc. By default, clicking on a .doc/.pdf/whatever will
+</I>&gt;<i> open abiword/xpdf/whatever but the document will not
+</I>&gt;<i> be opened too, just the program.
+</I>That's a bug in ROX-Filer that was recently fixed. It's because some 
+.desktop-files don't have an Exec-entry like e.g. &quot;abiword %F&quot; (%F 
+indicates it can open files) but just &quot;abiword&quot;. The next filer release 
+will fix this issue.
+If you don't want to wait, you can get ROX-Filer from svn. Just type:
+
+svn co <A HREF="https://svn.sourceforge.net/svnroot/rox/trunk/rox">https://svn.sourceforge.net/svnroot/rox/trunk/rox</A> rox
+
+and create a script ~/.config/rox.sourceforge.net/ROX-Session/RunROX
+
+which looks something like this:
+
+#! /bin/sh
+/path/to/ROX-Filer/AppRun -S
+
+and make it executable. Then restart ROX-Session.
+&gt;<i> Thomas Leonard said that anyone can organise a new
+</I>&gt;<i> release of rox-filer. I suppose we should ask on
+</I>&gt;<i> rox-devel first to see if anybody else is already
+</I>&gt;<i> doing it/wants to do it but if not might you create
+</I>&gt;<i> the next release so we will have SOAP support?
+</I>If nobody else wants to do it, I'll have a look how it's done and how 
+much time it would take.
+But I'd prefer if somebody else did, so I can concentrate on rox4debian 
+and the Media-app.
+&gt;<i> Also, what packages need to be installed to get video
+</I>&gt;<i> thumbnails working properly, especially for mplayer.
+</I>&gt;<i>
+</I>Don't know. I thought you just needed mplayer &gt;= 0.90. At least the 
+README of VideoThumbnails says so.
+
+
+	
+
+	
+		
+___________________________________________________________ 
+Telefonate ohne weitere Kosten vom PC zum PC: <A HREF="http://messenger.yahoo.de">http://messenger.yahoo.de</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000010.html">[Rox4debian-users] r4d 1.7 1st impressions
+</A></li>
+	<LI>Next message: <A HREF="000013.html">[Rox4debian-users] r4d 1.7 1st impressions
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#12">[ date ]</a>
+              <a href="thread.html#12">[ thread ]</a>
+              <a href="subject.html#12">[ subject ]</a>
+              <a href="author.html#12">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rox4debian-users">More information about the Rox4debian-users
+mailing list</a><br>
+</body></html>

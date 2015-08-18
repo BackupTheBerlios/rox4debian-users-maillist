@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rox4debian-users] usb unmount problems
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rox4debian-users/2006-June/index.html" >
+   <LINK REL="made" HREF="mailto:rox4debian-users%40lists.berlios.de?Subject=Re%3A%20%5BRox4debian-users%5D%20usb%20unmount%20problems&In-Reply-To=%3C20060616140608.33744.qmail%40web26009.mail.ukl.yahoo.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000030.html">
+   <LINK REL="Next"  HREF="000032.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rox4debian-users] usb unmount problems</H1>
+    <B>Dan MacDonald</B> 
+    <A HREF="mailto:rox4debian-users%40lists.berlios.de?Subject=Re%3A%20%5BRox4debian-users%5D%20usb%20unmount%20problems&In-Reply-To=%3C20060616140608.33744.qmail%40web26009.mail.ukl.yahoo.com%3E"
+       TITLE="[Rox4debian-users] usb unmount problems">danboid at yahoo.co.uk
+       </A><BR>
+    <I>Fri Jun 16 16:06:08 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000030.html">[Rox4debian-users] apt-get upgrade : MD5Sum mismatch
+</A></li>
+        <LI>Next message: <A HREF="000032.html">[Rox4debian-users] usb unmount problem fixed
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#31">[ date ]</a>
+              <a href="thread.html#31">[ thread ]</a>
+              <a href="subject.html#31">[ subject ]</a>
+              <a href="author.html#31">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I have the latest version of rox-desktop and ivman
+installed on this kanotix box. I can mount/unmount
+optical discs OK, but I get an error when I try
+unmounting any USB disks like this:
+
+-------------------
+
+Unmounting /media/sda1
+umount: /media/sda1 is not in the fstab (and you are
+not root)
+Unmount failed
+
+Done
+There was one error.
+
+---------------------
+
+The fstab looks like this:
+
+----------------------
+
+# /etc/fstab: static file system information.
+#
+# &lt;file system&gt; &lt;mount point&gt;   &lt;type&gt;  &lt;options&gt;     
+ &lt;dump&gt;  &lt;pass&gt;
+proc            /proc           proc    defaults      
+ 0       0
+usbfs           /proc/bus/usb   usbfs   devmode=0666  
+ 0       0
+/dev/hda2       /               reiserfs defaults     
+  0       1
+/dev/hda4       /home           reiserfs defaults     
+  0       2
+/dev/hda1       /media/hda1     ntfs    ro,umask=000  
+ 0       0
+/dev/hda3       none            swap    sw            
+ 0       0
+/dev/cdrom      /media/cdrom0   udf,iso9660
+user,noauto     0       0
+/dev/cdrom1     /media/cdrom1   udf,iso9660
+user,noauto     0       0
+/dev/fd0        /media/floppy0  auto    rw,user,noauto
+ 0       0
+
+---------------------------
+
+mtab
+
+---------------------
+
+/dev/hda2 / reiserfs rw 0 0
+proc /proc proc rw 0 0
+sysfs /sys sysfs rw 0 0
+usbfs /proc/bus/usb usbfs rw,devmode=0666 0 0
+tmpfs /dev/shm tmpfs rw 0 0
+devpts /dev/pts devpts rw,gid=5,mode=620 0 0
+/dev/hda4 /home reiserfs rw 0 0
+/dev/hda1 /media/hda1 ntfs ro,umask=000 0 0
+tmpfs /dev tmpfs rw,size=10M,mode=0755 0 0
+/dev/sda1 /media/sda1 vfat
+rw,noexec,nosuid,nodev,quiet,shortname=mixed,uid=1000,gid=1000,umask=077
+0 0
+
+------------------------------------
+
+The ivman daemon is running and I've tried it with and
+without that sda1 entry in mtab but I still get the
+same error. I have no problems with usb discs on my
+other kanotix machine which has an identical fstab
+file but it isn't running the very latest version of
+rox-desktop and I wouldn't want to upgrade it until I
+know usb support works.
+
+I don't suppose anyone has wrote any FAQs or HOWTOs on
+rox4debian yet have they? The first one should be on
+getting ivman and removeable drives behaving properly
+as I keep on having different problems it seems.
+
+Thanks,
+
+Dan
+
+__________________________________________________
+Do You Yahoo!?
+Tired of spam?  Yahoo! Mail has the best spam protection around 
+<A HREF="http://mail.yahoo.com">http://mail.yahoo.com</A> 
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000030.html">[Rox4debian-users] apt-get upgrade : MD5Sum mismatch
+</A></li>
+	<LI>Next message: <A HREF="000032.html">[Rox4debian-users] usb unmount problem fixed
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#31">[ date ]</a>
+              <a href="thread.html#31">[ thread ]</a>
+              <a href="subject.html#31">[ subject ]</a>
+              <a href="author.html#31">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rox4debian-users">More information about the Rox4debian-users
+mailing list</a><br>
+</body></html>
